@@ -251,6 +251,7 @@ THREE.GeometryUtils = {
 
 		var r, index,
 			result = [];
+		var time = 100;
 
 		for ( i = 0; i < n; i ++ ) {
 
@@ -263,7 +264,17 @@ THREE.GeometryUtils = {
 			vB.set( vertices[ index * 9 + 3 ], vertices[ index * 9 + 4 ], vertices[ index * 9 + 5 ] );
 			vC.set( vertices[ index * 9 + 6 ], vertices[ index * 9 + 7 ], vertices[ index * 9 + 8 ] );
 			result[ i ] = THREE.GeometryUtils.randomPointInTriangle( vA, vB, vC );
+			
+			
+			
+			//追加
+			time --;
+			document.write( time + "<br>" );
 
+			if(time <= 0)
+				break;
+				
+			
 		}
 
 		return result;
